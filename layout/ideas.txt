@@ -1,1 +1,9 @@
 Put location for physical dice, label as manual backup
+
+Big red button
+Two rotory/push encoders
+7 segment x 8, two rows
+8 leds spaced around the 7segs to indicate dice type
+etching of dice type over leds
+
+
