@@ -1,0 +1,10 @@
+1) devenv
+2) oled display
+3) User Input
+4) Dice Rolling
+5) Gen Entropy
+6) UI Display
+  7 Segment
+  Leds (WS2812)
+7) Packaging
+
