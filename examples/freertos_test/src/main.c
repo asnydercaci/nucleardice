@@ -47,12 +47,15 @@ int app_main() {
     io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
 
+    esp_log_level_set("*", ESP_LOG_INFO);  
+
     ESP_LOGI("app_main","About to create Tasks");
 
 //    xTaskCreate(&led_blink,"LED_BLINK",512,(void*)1000,5,NULL);
-    xTaskCreate(&led_blinky2,"LED_BLINK2",512,(void*)888,5,NULL);
-    xTaskCreate(&led_blinky3,"LED_BLINK3",512,(void*)1111,1,NULL);
+    xTaskCreate(&led_blinky2,"LED_BLINK2",2048,(void*)888,5,NULL);
+    xTaskCreate(&led_blinky3,"LED_BLINK3",2048,(void*)1111,1,NULL);
 
     ESP_LOGI("app_main","Done creating Tasks");
+
     return 0;
 }
