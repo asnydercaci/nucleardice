@@ -1,6 +1,7 @@
 #include <driver/gpio.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <stdio.h>
 
 // If not defined in the platformio.ini then define it here
 #ifndef LED
@@ -43,9 +44,13 @@ int app_main() {
     io_conf.pull_up_en = 0;
     gpio_config(&io_conf);
 
-    xTaskCreate(&led_blink,"LED_BLINK",512,(void*)1000,5,NULL);
-    xTaskCreate(&led_blinky2,"LED_BLINK2",512,(void*)888,7,NULL);
-    xTaskCreate(&led_blinky3,"LED_BLINK3",512,(void*)1111,5,NULL);
+    printf("About to create Tasks\n");
 
+//    xTaskCreate(&led_blink,"LED_BLINK",512,(void*)1000,5,NULL);
+    xTaskCreate(&led_blinky2,"LED_BLINK2",512,(void*)888,5,NULL);
+    xTaskCreate(&led_blinky3,"LED_BLINK3",512,(void*)1111,1,NULL);
+
+
+    printf("Done creating Tasks, Exiting app_main\n");
     return 0;
 }
